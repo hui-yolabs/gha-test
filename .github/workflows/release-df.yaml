@@ -1,4 +1,4 @@
-name: Deploy app
+name: Deploy app DF
 run-name: Deploy DF # shows env in the run title
 
 permissions:

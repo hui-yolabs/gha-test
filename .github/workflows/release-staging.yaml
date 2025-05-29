@@ -1,5 +1,5 @@
 
-name: Deploy app
+name: Deploy app Staging
 run-name: Deploy Staging # shows env in the run title
 
 permissions:
