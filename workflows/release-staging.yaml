@@ -1,0 +1,26 @@
+name: Deploy app
+run-name: Deploy Staging # shows env in the run title
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - 'release/*'
+    tags-ignore:
+      - '1.0.[0-9]+[+][0-9]+' # Ignore tags like 1.0.0+123
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:    
+  deploy-backend:
+    name: Deploy Backend – Staging
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pick env
+        run: |
+          echo "hello staging"
+          
