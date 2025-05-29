@@ -11,7 +11,7 @@ on:
     branches:
       - 'release/*'
     tags-ignore:
-      - '1.0.[0-9]+[+][0-9]+' # Ignore tags like 1.0.0+123
+      - '1.0.*+*'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
