@@ -1,0 +1,24 @@
+name: Deploy app
+run-name: Deploy DF # shows env in the run title
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  push:
+    tags:
+      - '[1].[0-9]+.[0-9]+'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:    
+  deploy-backend:
+    name: Deploy Backend – DF
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/heads/release/') && startsWith(github.ref, 'refs/tags/1.')
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pick env
+        run: |
+          echo "hello DF"
